@@ -16,6 +16,9 @@ app.use(cors({
 
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.send("🚀 Brainly API is running! Use /api/v1/... endpoints");
+});
 
 
 app.post("/api/v1/signup",async (req,res)=>{
