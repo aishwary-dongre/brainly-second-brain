@@ -346,7 +346,9 @@ app.get("/api/v1/brain/:shareLink",async(req,res)=>{
 })
 
 // Make sure to use the PORT environment variable or default to 3000
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+const PORT = parseInt(process.env.PORT || '3000');
+const HOST = process.env.HOST || '0.0.0.0';
+
+app.listen(PORT, HOST, () => {
+    console.log(`Server running on ${HOST}:${PORT}`);
 });
